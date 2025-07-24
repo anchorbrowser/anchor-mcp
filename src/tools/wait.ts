@@ -21,7 +21,7 @@ const wait = defineTool({
   capability: 'core',
 
   schema: {
-    name: 'browser_wait_for',
+    name: 'anchor_wait_for',
     title: 'Wait for',
     description: 'Wait for text to appear or disappear or a specified time to pass',
     inputSchema: z.object({

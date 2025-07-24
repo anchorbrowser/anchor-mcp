@@ -21,7 +21,7 @@ const handleDialog = defineTabTool({
   capability: 'core',
 
   schema: {
-    name: 'browser_handle_dialog',
+    name: 'anchor_handle_dialog',
     title: 'Handle a dialog',
     description: 'Handle a dialog',
     inputSchema: z.object({

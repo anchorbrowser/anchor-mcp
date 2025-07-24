@@ -20,7 +20,7 @@ import { defineTabTool } from './tool.js';
 const console = defineTabTool({
   capability: 'core',
   schema: {
-    name: 'browser_console_messages',
+    name: 'anchor_console_messages',
     title: 'Get console messages',
     description: 'Returns all console messages',
     inputSchema: z.object({}),

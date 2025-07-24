@@ -21,7 +21,7 @@ const listTabs = defineTool({
   capability: 'core-tabs',
 
   schema: {
-    name: 'browser_tab_list',
+    name: 'anchor_tab_list',
     title: 'List tabs',
     description: 'List browser tabs',
     inputSchema: z.object({}),
@@ -38,7 +38,7 @@ const selectTab = defineTool({
   capability: 'core-tabs',
 
   schema: {
-    name: 'browser_tab_select',
+    name: 'anchor_tab_select',
     title: 'Select a tab',
     description: 'Select a tab by index',
     inputSchema: z.object({
@@ -57,7 +57,7 @@ const newTab = defineTool({
   capability: 'core-tabs',
 
   schema: {
-    name: 'browser_tab_new',
+    name: 'anchor_tab_new',
     title: 'Open a new tab',
     description: 'Open a new tab',
     inputSchema: z.object({
@@ -78,7 +78,7 @@ const closeTab = defineTool({
   capability: 'core-tabs',
 
   schema: {
-    name: 'browser_tab_close',
+    name: 'anchor_tab_close',
     title: 'Close a tab',
     description: 'Close a tab',
     inputSchema: z.object({

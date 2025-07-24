@@ -21,7 +21,7 @@ const uploadFile = defineTabTool({
   capability: 'core',
 
   schema: {
-    name: 'browser_file_upload',
+    name: 'anchor_file_upload',
     title: 'Upload files',
     description: 'Upload one or multiple files',
     inputSchema: z.object({

@@ -19,7 +19,6 @@ import console from './tools/console.js';
 import dialogs from './tools/dialogs.js';
 import evaluate from './tools/evaluate.js';
 import files from './tools/files.js';
-import install from './tools/install.js';
 import keyboard from './tools/keyboard.js';
 import navigate from './tools/navigate.js';
 import network from './tools/network.js';
@@ -39,7 +38,6 @@ export const allTools: Tool<any>[] = [
   ...dialogs,
   ...evaluate,
   ...files,
-  ...install,
   ...keyboard,
   ...navigate,
   ...network,
@@ -50,6 +48,14 @@ export const allTools: Tool<any>[] = [
   ...tabs,
   ...wait,
 ];
+
+// Snapshot tools (non-vision tools)
+export const snapshotTools: Tool<any>[] = allTools.filter(tool => 
+  tool.capability !== 'vision'
+);
+
+// Vision tools (coordinate-based interactions)
+export const visionTools: Tool<any>[] = allTools;
 
 export function filteredTools(config: FullConfig) {
   return allTools.filter(tool => tool.capability.startsWith('core') || config.capabilities?.includes(tool.capability));

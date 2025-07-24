@@ -28,7 +28,7 @@ const pdf = defineTabTool({
   capability: 'pdf',
 
   schema: {
-    name: 'browser_pdf_save',
+    name: 'anchor_pdf_save',
     title: 'Save as PDF',
     description: 'Save page as PDF',
     inputSchema: pdfSchema,

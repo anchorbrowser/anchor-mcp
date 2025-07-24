@@ -100,6 +100,11 @@ export type Config = {
    */
   outputDir?: string;
 
+  /**
+   * Whether to enable vision capabilities for coordinate-based interactions.
+   */
+  vision?: boolean;
+
   network?: {
     /**
      * List of origins to allow the browser to request. Default is to allow all. Origins matching both `allowedOrigins` and `blockedOrigins` will be blocked.

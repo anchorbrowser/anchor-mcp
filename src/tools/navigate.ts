@@ -21,7 +21,7 @@ const navigate = defineTool({
   capability: 'core',
 
   schema: {
-    name: 'browser_navigate',
+    name: 'anchor_navigate',
     title: 'Navigate to a URL',
     description: 'Navigate to a URL',
     inputSchema: z.object({
@@ -32,6 +32,7 @@ const navigate = defineTool({
 
   handle: async (context, params, response) => {
     const tab = await context.ensureTab();
+    const browser = tab.page.context().browser();
     await tab.navigate(params.url);
 
     response.setIncludeSnapshot();
@@ -43,7 +44,7 @@ const navigate = defineTool({
 const goBack = defineTabTool({
   capability: 'core',
   schema: {
-    name: 'browser_navigate_back',
+    name: 'anchor_navigate_back',
     title: 'Go back',
     description: 'Go back to the previous page',
     inputSchema: z.object({}),
@@ -61,7 +62,7 @@ const goBack = defineTabTool({
 const goForward = defineTabTool({
   capability: 'core',
   schema: {
-    name: 'browser_navigate_forward',
+    name: 'anchor_navigate_forward',
     title: 'Go forward',
     description: 'Go forward to the next page',
     inputSchema: z.object({}),

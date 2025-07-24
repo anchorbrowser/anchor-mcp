@@ -1,0 +1,19 @@
+Anchor MCP Server
+Copyright 2025 [Your Name]
+
+This product includes software developed by Microsoft Corporation
+for the Playwright MCP Server project.
+
+Original work: https://github.com/microsoft/playwright-mcp
+Original license: Apache License 2.0
+
+Modifications made:
+- Integrated Anchor Browser API for remote browser execution
+- Added proxy and stealth capabilities via Anchor Browser service
+- Modified browser context factory to use Anchor's remote browsers
+- Updated configuration and documentation for Anchor-specific features
+- Added automated setup script and Anchor-specific examples
+
+This modified version connects to Anchor Browser's cloud infrastructure
+instead of local browsers, providing built-in proxy rotation and
+advanced anti-detection capabilities. 

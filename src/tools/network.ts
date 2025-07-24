@@ -23,7 +23,7 @@ const requests = defineTabTool({
   capability: 'core',
 
   schema: {
-    name: 'browser_network_requests',
+    name: 'anchor_network_requests',
     title: 'List network requests',
     description: 'Returns all network requests since loading the page',
     inputSchema: z.object({}),

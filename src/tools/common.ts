@@ -21,7 +21,7 @@ const close = defineTool({
   capability: 'core',
 
   schema: {
-    name: 'browser_close',
+    name: 'anchor_close',
     title: 'Close browser',
     description: 'Close the page',
     inputSchema: z.object({}),
@@ -38,7 +38,7 @@ const close = defineTool({
 const resize = defineTabTool({
   capability: 'core',
   schema: {
-    name: 'browser_resize',
+    name: 'anchor_resize',
     title: 'Resize browser window',
     description: 'Resize the browser window',
     inputSchema: z.object({

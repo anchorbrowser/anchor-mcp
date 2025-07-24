@@ -25,7 +25,7 @@ const pressKey = defineTabTool({
   capability: 'core',
 
   schema: {
-    name: 'browser_press_key',
+    name: 'anchor_press_key',
     title: 'Press a key',
     description: 'Press a key on the keyboard',
     inputSchema: z.object({

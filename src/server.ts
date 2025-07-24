@@ -33,7 +33,7 @@ export class Server {
     this.config = config;
     this.tools = tools;
     this._browserConfig = config.browser;
-    this._contextFactory = contextFactory ?? defaultContextFactory(this._browserConfig);
+    this._contextFactory = contextFactory ?? defaultContextFactory();
   }
 
   async createConnection(transport: Transport): Promise<void> {

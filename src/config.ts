@@ -68,6 +68,7 @@ const defaultConfig: FullConfig = {
   },
   server: {},
   outputDir: path.join(os.tmpdir(), 'playwright-mcp-output', sanitizeForFilePath(new Date().toISOString())),
+  vision: false,
 };
 
 type BrowserUserConfig = NonNullable<Config['browser']>;
@@ -81,6 +82,7 @@ export type FullConfig = Config & {
   network: NonNullable<Config['network']>,
   outputDir: string;
   server: NonNullable<Config['server']>,
+  vision: boolean,
 };
 
 export async function resolveConfig(config: Config): Promise<FullConfig> {

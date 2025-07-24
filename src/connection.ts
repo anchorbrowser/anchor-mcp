@@ -23,11 +23,18 @@ import { packageJSON } from './package.js';
 import { FullConfig } from './config.js';
 import { SessionLog } from './sessionLog.js';
 import { logUnhandledError } from './log.js';
+import { snapshotTools, visionTools } from './tools.js';
 import type { BrowserContextFactory } from './browserContextFactory.js';
 import type { Tool } from './tools/tool.js';
 
 export async function createMCPServer(config: FullConfig, tools: Tool<any>[], browserContextFactory: BrowserContextFactory): Promise<Server> {
-  const context = new Context(tools, config, browserContextFactory);
+  const allTools = config.vision ? visionTools : snapshotTools;
+  const filteredTools = allTools.filter((tool: Tool<any>) => !config.capabilities || tool.capability === 'core' || config.capabilities.includes(tool.capability));
+  const context = new Context(filteredTools, config, browserContextFactory);
+  
+  // Ensure clean state by disposing any existing contexts
+  await Context.disposeAll();
+  
   const server = new Server({ name: 'Playwright', version: packageJSON.version }, {
     capabilities: {
       tools: {},
@@ -38,7 +45,7 @@ export async function createMCPServer(config: FullConfig, tools: Tool<any>[], br
 
   server.setRequestHandler(ListToolsRequestSchema, async () => {
     return {
-      tools: tools.map(tool => ({
+      tools: filteredTools.map((tool: Tool<any>) => ({
         name: tool.schema.name,
         description: tool.schema.description,
         inputSchema: zodToJsonSchema(tool.schema.inputSchema),
@@ -57,7 +64,7 @@ export async function createMCPServer(config: FullConfig, tools: Tool<any>[], br
       content: [{ type: 'text', text: messages.join('\n') }],
       isError: true,
     });
-    const tool = tools.find(tool => tool.schema.name === request.params.name);
+    const tool = filteredTools.find((tool: Tool<any>) => tool.schema.name === request.params.name);
     if (!tool)
       return errorResult(`Tool "${request.params.name}" not found`);
 

@@ -44,7 +44,7 @@ const screenshotSchema = z.object({
 const screenshot = defineTabTool({
   capability: 'core',
   schema: {
-    name: 'browser_take_screenshot',
+    name: 'anchor_take_screenshot',
     title: 'Take a screenshot',
     description: `Take a screenshot of the current page. You can't perform actions based on the screenshot, use browser_snapshot for actions.`,
     inputSchema: screenshotSchema,

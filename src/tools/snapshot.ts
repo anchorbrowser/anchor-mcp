@@ -23,7 +23,7 @@ import { generateLocator } from './utils.js';
 const snapshot = defineTool({
   capability: 'core',
   schema: {
-    name: 'browser_snapshot',
+    name: 'anchor_snapshot',
     title: 'Page snapshot',
     description: 'Capture accessibility snapshot of the current page, this is better than screenshot',
     inputSchema: z.object({}),
@@ -49,7 +49,7 @@ const clickSchema = elementSchema.extend({
 const click = defineTabTool({
   capability: 'core',
   schema: {
-    name: 'browser_click',
+    name: 'anchor_click',
     title: 'Click',
     description: 'Perform click on a web page',
     inputSchema: clickSchema,
@@ -83,7 +83,7 @@ const click = defineTabTool({
 const drag = defineTabTool({
   capability: 'core',
   schema: {
-    name: 'browser_drag',
+    name: 'anchor_drag',
     title: 'Drag mouse',
     description: 'Perform drag and drop between two elements',
     inputSchema: z.object({
@@ -114,7 +114,7 @@ const drag = defineTabTool({
 const hover = defineTabTool({
   capability: 'core',
   schema: {
-    name: 'browser_hover',
+    name: 'anchor_hover',
     title: 'Hover mouse',
     description: 'Hover over element on page',
     inputSchema: elementSchema,
@@ -140,7 +140,7 @@ const selectOptionSchema = elementSchema.extend({
 const selectOption = defineTabTool({
   capability: 'core',
   schema: {
-    name: 'browser_select_option',
+    name: 'anchor_select_option',
     title: 'Select option',
     description: 'Select an option in a dropdown',
     inputSchema: selectOptionSchema,

@@ -300,10 +300,10 @@ class ExtensionContextFactory implements BrowserContextFactory {
     this._relay = relay;
   }
 
-  async createContext(clientInfo: { name: string, version: string }): Promise<{ browserContext: playwright.BrowserContext, close: () => Promise<void> }> {
+  async createContext(clientInfo?: { name: string, version: string }): Promise<{ browserContext: playwright.BrowserContext, close: () => Promise<void> }> {
     // First call will establish the connection to the extension.
     if (!this._browserPromise)
-      this._browserPromise = this._obtainBrowser(clientInfo);
+      this._browserPromise = this._obtainBrowser(clientInfo || { name: 'unknown', version: '1.0.0' });
     const browser = await this._browserPromise;
     return {
       browserContext: browser.contexts()[0],

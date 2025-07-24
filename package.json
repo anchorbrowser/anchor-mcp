@@ -1,19 +1,26 @@
 {
-  "name": "@playwright/mcp",
-  "version": "0.0.31",
-  "description": "Playwright Tools for MCP",
+  "name": "anchor-mcp",
+  "version": "0.1.0",
+  "description": "Anchor Browser MCP Server - Remote browser automation with built-in proxies and stealth capabilities",
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/microsoft/playwright-mcp.git"
+    "url": "git+https://github.com/anchorbrowser/anchor-mcp.git"
   },
-  "homepage": "https://playwright.dev",
+  "homepage": "https://anchorbrowser.io",
   "engines": {
     "node": ">=18"
   },
   "author": {
-    "name": "Microsoft Corporation"
+    "name": "Guy Ben Simhon",
+    "email": "guy@anchorbrowser.io"
   },
+  "contributors": [
+    {
+      "name": "Microsoft Corporation",
+      "note": "Original Playwright MCP implementation"
+    }
+  ],
   "license": "Apache-2.0",
   "scripts": {
     "build": "tsc",
@@ -29,6 +36,7 @@
     "wtest": "playwright test --project=webkit",
     "run-server": "node lib/browserServer.js",
     "clean": "rm -rf lib extension/lib",
+    "setup": "npm install && npm run build",
     "npm-publish": "npm run clean && npm run build && npm run test && npm publish"
   },
   "exports": {
@@ -38,8 +46,19 @@
       "default": "./index.js"
     }
   },
+  "keywords": [
+    "anchor",
+    "browser",
+    "automation",
+    "mcp",
+    "playwright",
+    "proxy",
+    "stealth",
+    "remote-browser"
+  ],
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.16.0",
+    "axios": "^1.10.0",
     "commander": "^13.1.0",
     "debug": "^4.4.1",
     "mime": "^4.0.7",
@@ -69,6 +88,6 @@
     "typescript": "^5.8.2"
   },
   "bin": {
-    "mcp-server-playwright": "cli.js"
+    "anchor-mcp": "cli.js"
   }
 }
