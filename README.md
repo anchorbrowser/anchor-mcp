@@ -19,32 +19,6 @@ A Model Context Protocol (MCP) server that provides browser automation capabilit
 
 ## Getting Started
 
-### Quick Setup (Recommended)
-
-For automated setup, run the setup script:
-
-```bash
-# Clone the repository
-git clone https://github.com/anchorbrowser/anchor-mcp.git
-cd anchor-mcp
-
-# Run the automated setup script
-chmod +x setup.sh
-./setup.sh
-```
-
-The script will:
-- ✅ Check Node.js version
-- 📦 Install dependencies  
-- 🔨 Build the project
-- 🔑 Prompt for your Anchor API key
-- 📝 Generate MCP configuration
-- 🧪 Test the setup
-
-### Manual Setup
-
-If you prefer manual setup:
-
 ### 1. Clone and Build
 
 Since this is a custom Anchor MCP server, you need to build it locally:
