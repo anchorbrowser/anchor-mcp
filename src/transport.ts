@@ -129,7 +129,7 @@ export function startHttpTransport(httpServer: http.Server, mcpServer: Server) {
     'Put this in your client config:',
     JSON.stringify({
       'mcpServers': {
-        'playwright': {
+        'anchor-browser': {
           'url': `${url}/mcp`
         }
       }

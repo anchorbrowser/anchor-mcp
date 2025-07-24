@@ -115,12 +115,8 @@ node cli.js --help
 
 ### Available Options:
 
-- `--caps <caps>` - Comma-separated list of additional capabilities (vision, pdf)
-- `--config <path>` - Path to the configuration file
 - `--host <host>` - Host to bind server to (default: localhost, use 0.0.0.0 for all interfaces)
 - `--port <port>` - Port to listen on for HTTP transport (Docker/server mode)
-- `--save-trace` - Save Playwright traces for debugging
-- `--output-dir <path>` - Path to the directory for output files
 
 ### Example with Options:
 
@@ -131,8 +127,6 @@ node cli.js --help
       "command": "node",
       "args": [
         "/path/to/anchor-mcp/cli.js",
-        "--save-trace",
-        "--caps", "vision,pdf"
       ],
       "env": {
         "ANCHOR_API_KEY": "sk-your-api-key-here"
